@@ -20,6 +20,7 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
     public final XCANMotorController frontLeft;
     public final XCANMotorController frontRight;
 
+    boolean PrecisionMode = false;
     DoubleProperty dp;
 
     @Inject
@@ -42,7 +43,12 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
         // according to the value of leftPower:
         frontLeft.setPower(leftPower);
         // TODO: Add code to set the right motors to the rightPower value.
+        frontRight.setPower(rightPower);
+        if (PrecisionMode == true){
+            frontLeft.setPower(leftPower/2);
+            frontRight.setPower(rightPower/2);
 
+        }
     }
 
 
