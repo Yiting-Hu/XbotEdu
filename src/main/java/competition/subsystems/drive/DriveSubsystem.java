@@ -15,10 +15,13 @@ import xbot.common.properties.PropertyFactory;
 import xbot.common.subsystems.drive.BaseDriveSubsystem;
 
 @Singleton
+
 public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefreshable {
 
     public final XCANMotorController frontLeft;
     public final XCANMotorController frontRight;
+
+    boolean togglePrecisionMode = false;
 
     boolean PrecisionMode = false;
     DoubleProperty dp;
@@ -41,15 +44,17 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
         // You'll need to take these power values and assign them to all of the motors.
         // As an example, here is some code that has the frontLeft motor to spin
         // according to the value of leftPower:
-        frontLeft.setPower(leftPower);
+         frontLeft.setPower(leftPower);
         // TODO: Add code to set the right motors to the rightPower value.
         frontRight.setPower(rightPower);
-        if (PrecisionMode == true){
+        if (togglePrecisionMode == true){
             frontLeft.setPower(leftPower/2);
             frontRight.setPower(rightPower/2);
 
         }
-    }
+        driveSubsystem.togglePrecisionMode();
+
+   }
 
 
     // You can ignore all of the code undearneat this comment -->
