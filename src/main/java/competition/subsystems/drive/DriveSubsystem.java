@@ -44,17 +44,19 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
         // You'll need to take these power values and assign them to all of the motors.
         // As an example, here is some code that has the frontLeft motor to spin
         // according to the value of leftPower:
-         frontLeft.setPower(leftPower);
-        // TODO: Add code to set the right motors to the rightPower value.
-        frontRight.setPower(rightPower);
-        if (togglePrecisionMode == true){
+        if (togglePrecisionMode){
             frontLeft.setPower(leftPower/2);
             frontRight.setPower(rightPower/2);
-
+        } else {
+            frontLeft.setPower(leftPower);
+            frontRight.setPower(rightPower);
         }
-        driveSubsystem.togglePrecisionMode();
 
    }
+
+public void setPrecisionMode(){
+    togglePrecisionMode = !togglePrecisionMode;
+}
 
 
     // You can ignore all of the code undearneat this comment -->
