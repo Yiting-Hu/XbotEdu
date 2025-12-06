@@ -15,7 +15,6 @@ import xbot.common.properties.PropertyFactory;
 import xbot.common.subsystems.drive.BaseDriveSubsystem;
 
 @Singleton
-
 public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefreshable {
 
     public final XCANMotorController frontLeft;
@@ -54,9 +53,9 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
 
    }
 
-public void setPrecisionMode(){
-    togglePrecisionMode = !togglePrecisionMode;
-}
+    public void setPrecisionMode(){
+        togglePrecisionMode = !togglePrecisionMode;
+    }
 
 
     // You can ignore all of the code undearneat this comment -->
