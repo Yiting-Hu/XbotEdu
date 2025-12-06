@@ -23,7 +23,7 @@ public class DriveSubsystem extends BaseDriveSubsystem implements DataFrameRefre
 
     boolean togglePrecisionMode = false;
 
-    boolean PrecisionMode = false;
+    boolean precisionMode = false;
     DoubleProperty dp;
 
     @Inject
